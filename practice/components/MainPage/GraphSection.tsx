@@ -1,26 +1,86 @@
-import React, {useEffect, useRef, useState} from "react";
-import dynamic from "next/dynamic";
-import scenario from "../../public/scenario.json"
-import {commands} from "next/dist/lib/commands";
+import scenario2 from "../../public/scenario_pre.json"
+import React from 'react';
+
+import * as go from 'gojs';
+import {ReactDiagram} from 'gojs-react';
+
+//import '../../src/styles/globals.css';  // contains .diagram-component CSS
 
 
-const NoSSRForceGraph = dynamic(() => import('../../lib/NoSSRForceGraph'), {ssr: false});
+function initDiagram() {
+    const $ = go.GraphObject.make;
+    // set your license key here before creating the diagram: go.Diagram.licenseKey = "...";
+    const diagram =
+        $(go.Diagram,
+            {
+                'undoManager.isEnabled': true,  // must be set to allow for model change listening
+                // 'undoManager.maxHistoryLength': 0,  // uncomment disable undo/redo functionality
+                'clickCreatingTool.archetypeNodeData': {text: 'new node', color: 'lightblue'},
+                model: new go.GraphLinksModel(
+                    {
+                        linkKeyProperty: 'key'  // IMPORTANT! must be defined for merges and data sync when using GraphLinksModel
+                    })
+            });
 
-const obj = JSON.stringify(scenario);
-const states = JSON.parse(obj).states;
+    // define a simple Node template
+    diagram.nodeTemplate =
+        $(go.Node, 'Auto',
+            new go.Binding('location', 'loc', go.Point.parse).makeTwoWay(go.Point.stringify),
+            $(go.Shape, 'RoundedRectangle',
+                {name: 'SHAPE', fill: 'white', strokeWidth: 0},{ fill: $(go.Brush, "Linear",
+                        { 0.0: "Violet", 1.0: "Lavender" }) },
+                // Shape.fill is bound to Node.data.color
+                new go.Binding('fill', 'color')),
+            $(go.TextBlock,
+                {margin: 8, editable: true},
+                new go.Binding('text').makeTwoWay()
+            )
+        );
+    //
+    // diagram.linkTemplate =
+    //     $(go.Link,
+    //         { routing: go.Link.AvoidsNodes,
+    //             corner: 10 , curve: go.Link.JumpOver},                  // rounded corners
+    //         $(go.Shape),
+    //         $(go.Shape, { toArrow: "Standard" })
+    //     );
+    diagram.linkTemplate =
+        $(go.Link,
+             { routing: go.Link.Orthogonal,
+                             corner: 10 , curve: go.Link.JumpOver},
+            $(go.Shape),
+            $(go.Shape, { toArrow: "Standard" })
+        );
+    return diagram;
+}
+
+const obj = JSON.stringify(scenario2);
+
+
+function dataNode() {
+    const states = JSON.parse(obj).states;
+    let array = [];
+    for (let key in states) {
+        array.push({key: states[key]["id"], text: states[key]["name"]})
+    }
+    return array
+}
+
+
+
 const scen = JSON.parse(obj).scenario;
 
-function linkJSON(scen) {
+function linkJSON() {
+    const scen = JSON.parse(obj).scenario;
     let arrayLink = [];
-    let arrayEvent = [];
     for (let key in scen) {
         for (let key2 in scen[key]["actions"]) {
             if ("set_state" in scen[key]["actions"][key2]) {
                 arrayLink.push({
-                    source: scen[key]["actions"][key2]["state"],
-                    target: scen[key]["actions"][key2]["set_state"],
-                    commands: scen[key]["actions"][key2]["commands"],
-                    name: scen[key]["event"]
+                    from: scen[key]["actions"][key2]["state"],
+                    to: scen[key]["actions"][key2]["set_state"]
+                    //commands: scen[key]["actions"][key2]["commands"],
+                    //name: scen[key]["event"]
                 })
             }
         }
@@ -28,65 +88,26 @@ function linkJSON(scen) {
     return arrayLink;
 }
 
-const links = linkJSON(scen);
-const myData = {
-    nodes: [...states],
-    links: [...links]
-};
-const nodeCanvasObject = (node, ctx, globalScale) => {
-    const label = node.name;
-    const fontSize = 16 / globalScale;
-    ctx.font = `${fontSize}px Sans-Serif`;
-    const textWidth = ctx.measureText(label).width;
-    const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2); // some padding
-
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
-    ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
-
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = node.color;
-    node.color = 'rgba(22,4,105,0.8)';
-
-    ctx.fillText(label, node.x, node.y);
-
-    node.__bckgDimensions = bckgDimensions;
-}
-
-const nodePointerAreaPaint = (node, color, ctx) => {
-    ctx.fillStyle = color;
-    const bckgDimensions = node.__bckgDimensions;
-    bckgDimensions && ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y -
-        bckgDimensions[1] / 2, ...bckgDimensions);
-}
-
-const handleNodeClick = (node, link) => {
-    console.log(node.links)
-};
-
-const linkColor = () => {
-    'rgba(134,11,11,0.8)'
-}
+const links = linkJSON();
 
 
-export default function GraphSection(props: any) {
+const stringArr = linkJSON().map(str => JSON.stringify(str));
+const uniqueStrs = [ ...new Set(stringArr)] // removes duplicates
+const result = uniqueStrs.map(str => JSON.parse(str));
+
+console.log(result);
+
+
+export default function GraphSection() {
     return (
-        <main className="main_section">
-            <h1 className=""></h1>
-            <section>
-                <NoSSRForceGraph graphData={myData}
-                                 nodeAutoColorBy="group"
-                                 nodeCanvasObject={nodeCanvasObject}
-                                 nodePointerAreaPaint={nodePointerAreaPaint}
-                                 linkColor={linkColor}
-                                 onNodeClick={handleNodeClick}
-                                 linkDirectionalArrowLength={4}
-                                 linkDirectionalParticleColor={() => "red"}
-                                 //linkDirectionalArrowRelPos={1}
-                                 linkCurvature={0.09}
-                ></NoSSRForceGraph>
-            </section>
-        </main>
+        <div>
+            <ReactDiagram
+                initDiagram={initDiagram}
+                divClassName='diagram-component'
+                nodeDataArray={[...dataNode()]}
+
+                linkDataArray={[...result]}
+            />
+        </div>
     );
 }
-
