@@ -1,0 +1,4223 @@
+{
+  "events": [
+    {
+      "id": 0,
+      "name": "Init",
+      "description": "Запрос на отражение заставки IDLE"
+    },
+    {
+      "id": 1,
+      "name": "PutCard",
+      "description": "Сообщение о попытке открыть киоск картой"
+    },
+    {
+      "id": 11,
+      "name": "DoorNotOpen",
+      "description": "Дверь не открывалась"
+    },
+    {
+      "id": 1112,
+      "name": "LockClosed",
+      "description": "Замки закрыты, если дверь не открывалась"
+    },
+    {
+      "id": 10,
+      "name": "BlackClient",
+      "description": "Клиент в черном списке"
+    },
+    {
+      "id": 20,
+      "name": "WhiteClient",
+      "description": "Клиент в белом списке"
+    },
+    {
+      "id": 30,
+      "name": "DolgClient",
+      "description": "У клиента долг"
+    },
+    {
+      "id": 31,
+      "name": "ConfirmCard",
+      "description": "Проверить карту по диапазонам и/или выполнить холд"
+    },
+    {
+      "id": 32,
+      "name": "CardValid",
+      "description": "Карта проверена"
+    },
+    {
+      "id": 220,
+      "name": "BankCardError",
+      "description": "Ошибка банка"
+    },
+    {
+      "id": 221,
+      "name": "DeviceBankError",
+      "description": "Ошибка банка"
+    },
+    {
+      "id": 231,
+      "name": "HoldErrorTokenCard",
+      "description": "ApplePay/GooglePay"
+    },
+    {
+      "id": 239,
+      "name": "HoldErrorMirCard",
+      "description": "МИР Пэй"
+    },
+    {
+      "id": 222,
+      "name": "CardNoMoney",
+      "description": "Недостаточно средств списание депозита"
+    },
+    {
+      "id": 211,
+      "name": "HoldComplete",
+      "description": "Выполнен холд"
+    },
+    {
+      "id": 227,
+      "name": "RefundFailed",
+      "description": "ошибка банка (частичный возврат)"
+    },
+    {
+      "id": 224,
+      "name": "CardDolgNoMoney",
+      "description": "Недостаточно денег при оплате долга"
+    },    
+    {
+      "id": 223,
+      "name": "ConnectBankError",
+      "description": "нет связи с банком при оплате долга"
+    },
+    {
+      "id": 238,
+      "name": "BankDolgTimeout",
+      "description": "таймаут при оплате долга"
+    },
+    {
+      "id": 995,
+      "name": "ErrorPaymentDolg",
+      "description": "ошибка при оплате долга"
+    },
+    {
+      "id": 233,
+      "name": "BankTimeout",
+      "description": "таймаут при втором поднесении карты"
+    },    
+    {
+      "id": 234,
+      "name": "BankPaymentTimeout",
+      "description": "таймаут при оплате"
+    },
+    {
+      "id": 235,
+      "name": "PaymentErrorNoMoney",
+      "description": "Недостаточно денег при оплате"
+    },
+    {
+      "id": 201,
+      "name": "ConfirmPayment",
+      "description": "платеж подтвержден"
+    },
+    {
+      "id": 203,
+      "name": "OperationError",
+      "description": "ошибка операции (оплата/досписание/частичный возврат)"
+    },
+    {
+      "id": 251,
+      "name": "OperationConfirmAsync",
+      "description": "асинхронной подтверждение оплаты"
+    },
+    {
+      "id": 252,
+      "name": "PayDolgAsync",
+      "description": "асинхронная оплата долга"
+    },
+    {
+      "id": 253,
+      "name": "OperationErrorAsync",
+      "description": "ошибка асинхронной оплаты"
+    },
+    {
+      "id": 3038,
+      "name": "DolgClientCheck",
+      "description": "Проверка долгов по токену"
+    },
+    {
+      "id": 2020,
+      "name": "GetDolgToken",
+      "description": "Получены долги по токену"
+    },
+    {
+      "id": 2021,
+      "name": "ErrorDolgToken",
+      "description": "Ошибка получения долгов токену"
+    },
+    {
+      "id": 3030,
+      "name": "ContinueDolg",
+      "description": "Нажата кнопка 'Оплатить позднее'"
+    },
+    {
+      "id": 3032,
+      "name": "ConfirmDolg",
+      "description": "Нажата кнопка Оплатить долг"
+    },
+    {
+      "id": 3033,
+      "name": "WaitDolgClient",
+      "description": "Ожидание действия пользователя в банковском на Bluepad"
+    },
+    {
+      "id": 3040,
+      "name": "BannedClient",
+      "description": "Клиент в блокирующем ЧС"
+    },
+    {
+      "id": 2,
+      "name": "OpenCheck",
+      "description": "Открыть чек"
+    },
+    {
+      "id": 22,
+      "name": "OpenLock",
+      "description": "Открыть змок"
+    },
+    {
+      "id": 23,
+      "name": "LockOpened",
+      "description": "Замок открыт"
+    },
+    {
+      "id": 3,
+      "name": "OpenDoor",
+      "description": "Открыта дверь"
+    },
+    {
+      "id": 3333,
+      "name": "ActivateTradeSession",
+      "description": "Активация сессии продажи"
+    },
+    {
+      "id": 40,
+      "name": "BlockClient",
+      "description": "Клиент в блокирующем ЧС"
+    },
+    {
+      "id": 50,
+      "name": "PrePayCheck",
+      "description": "Требуется второе прикладывание карты"
+    },
+    {
+      "id": 51,
+      "name": "CheckDolgCard",
+      "description": "Карта с долгами проверена"
+    },
+    {
+      "id": 551,
+      "name": "PutPrepayCard",
+      "description": "Карта поднесена второй раз"
+    },
+    {
+      "id": 552,
+      "name": "RemovePrepayCard",
+      "description": "Второй раз поднесена другая карта"
+    },
+    {
+      "id": 202,
+      "name": "PayDolg",
+      "description": "Оплатить долг"
+    },
+    {
+      "id": 205,
+      "name": "DolgPayed",
+      "description": "Долг оплачен"
+    },
+    {
+      "id": 301,
+      "name": "PhoneCode",
+      "description": "Сообщение о попытке открыть киоск сканирование кода на экране"
+    },
+    {
+      "id": 351,
+      "name": "CheckPhone",
+      "description": "Сообщение о попытке открыть киоск приложением"
+    },
+    {
+      "id": 332,
+      "name": "ClientCode",
+      "description": "Поднесен код/телефон клиента"
+    },
+    {
+      "id": 333,
+      "name": "DetectMerchant",
+      "description": "Поднесен код мерчанта"
+    },
+    {
+      "id": 334,
+      "name": "BadMerchant",
+      "description": "Код мерчанта не распознан"
+    },
+    {
+      "id": 335,
+      "name": "DetectTechnic",
+      "description": "Поднесен код техника"
+    },
+    {
+      "id": 303,
+      "name": "GetDocument",
+      "description": "Получен документ"
+    },
+    {
+      "id": 308,
+      "name": "EndMerchant",
+      "description": "окончание сессии мерчанта"
+    },
+    {
+      "id": 311,
+      "name": "DeletePosition",
+      "description": "забрать товар в режиме мерчанта"
+    },
+    {
+      "id": 312,
+      "name": "AddPosition",
+      "description": "положить товар в режиме мерчанта"
+    },
+    {
+      "id": 320,
+      "name": "ResetDocument",
+      "description": "в режиме мерчанта изменени режим 'положить/забрать'"
+    },
+    {
+      "id": 336,
+      "name": "ResetScanner",
+      "description": "деактивация сканера"
+    },
+    {
+      "id": 131,
+      "name": "GetPhotoError",
+      "description": "Фото ошибки открытия чека (двери)"
+    },
+    {
+      "id": 130,
+      "name": "GetPhotoProduct",
+      "description": "Фото взятия/возврата товара"
+    },
+    {
+      "id": 4,
+      "name": "PlusProduct",
+      "description": "Нажата кнопка '+' на UI"
+    },
+    {
+      "id": 5,
+      "name": "MinusProduct",
+      "description": "Нажата кнопка '-' на UI"
+    },
+    {
+      "id": 4004,
+      "name": "ScanProduct",
+      "description": "Отсканирован код товара"
+    },
+    {
+      "id": 4404,
+      "name": "PlusProductPhone",
+      "description": "Отсканирован товар или нажата кнопка '+' в приложении"
+    },
+    {
+      "id": 4405,
+      "name": "MinusProductPhone",
+      "description": "Нажата кнопка '-' в приложении"
+    },
+    {
+      "id": 4444,
+      "name": "AddProductCheck",
+      "description": "Товар добавлен в чек"
+    },
+    {
+      "id": 4445,
+      "name": "DelProductCheck",
+      "description": "Товар удален из чека"
+    },
+    {
+      "id": 4440,
+      "name": "CheckProductError",
+      "description": "Ошибка добавления/удаления товара в чеке"
+    },
+    {
+      "id": 6,
+      "name": "CloseTradeSession",
+      "description": "Окончание сессии продажи"
+    },
+    {
+      "id": 61,
+      "name": "WaitCloseSession",
+      "description": "Ожидание закрытия сессии после закрытия двери"
+    },
+    {
+      "id": 62,
+      "name": "ReopenDoor",
+      "description": "Повторно открыли дверь"
+    },
+    {
+      "id": 66,
+      "name": "CloseDoor",
+      "description": "Закрыта дверь"
+    },
+    {
+      "id": 88,
+      "name": "CloseSession",
+      "description": "Окончание сессии продажи"
+    },
+    {
+      "id": 89,
+      "name": "GetPhone",
+      "description": "Требуется ввести номер телефона"
+    },
+    {
+      "id": 7,
+      "name": "SetPhone",
+      "description": "Результат ввода номера телефона"
+    },
+    {
+      "id": 8,
+      "name": "ClosePayCheck",
+      "description": "Чек закрыт (оплата)"
+    },
+    {
+      "id": 28,
+      "name": "AuthorizeBonus",
+      "description": "Авторизация в бонусной системе"
+    },
+    {
+      "id": 29,
+      "name": "AuthorizeBonusFailed",
+      "description": "Ошибка авторизации в бонусной системе"
+    },
+    {
+      "id": 48,
+      "name": "UpdateBonus",
+      "description": "Обновить бонусы"
+    },
+    {
+      "id": 49,
+      "name": "UpdateBonusFailed",
+      "description": "Ошибка обновления бонусов"
+    },
+    {
+      "id": 78,
+      "name": "ProcessBonusCheck",
+      "description": "Обработка/подтверждение бонусов"
+    },
+    {
+      "id": 68,
+      "name": "GetBonusSumma",
+      "description": "показать экран ввода количества бонусов на списание"
+    },
+    {
+      "id": 69,
+      "name": "SetBonusSumma",
+      "description": "указана сумма бонусов к списанию"
+    },
+    {
+      "id": 70,
+      "name": "ConfirmBonus",
+      "description": "подтверждены скидки, сохранить данные по скидкам и закрыть чек"
+    },
+    {
+      "id": 71,
+      "name": "FailedBonus",
+      "description": "ошибка подтверждения, закрыть чек без скидок"
+    },
+    {
+      "id": 72,
+      "name": "CloseBonusCheck",
+      "description": "Закрыть чек с бонусами"
+    },
+    {
+      "id": 75,
+      "name": "ConfirmBonusDelay",
+      "description": "Отложенное подтверждение бонусов"
+    },
+    {
+      "id": 74,
+      "name": "CancelPayBonus",
+      "description": "Отмена списания бонусов"
+    },
+    {
+      "id": 76,
+      "name": "CancelConfirmBonusDelay",
+      "description": "отложенное подтверждение скидок, отказ от списание бонусов"
+    },
+    {
+      "id": 79,
+      "name": "CancelBonusCheck",
+      "description": "отмена бонусного чека"
+    },
+    {
+      "id": 81,
+      "name": "FailedConfirmBonus",
+      "description": "ошибка списания бонусов"
+    },
+    {
+      "id": 83,
+      "name": "ReopenLock",
+      "description": "открыть замок, вернуться в чек"
+    },
+    {
+      "id": 80,
+      "name": "CloseSpecialCheck",
+      "description": "Закрыт чек под зарплату Красцветмет"
+    },
+    {
+      "id": 9,
+      "name": "CloseEmptyCheck",
+      "description": "Закрыт пустой чек"
+    },
+    {
+      "id": 5030,
+      "name": "CancelPrepayError",
+      "description": "Ошибка возврат депозита"
+    },
+    {
+      "id": 5031,
+      "name": "CancelPrepay",
+      "description": "Отмена депозита"
+    },
+    {
+      "id": 5032,
+      "name": "CancelPrepaySuccess",
+      "description": "Успешный возврат депозита"
+    },
+    {
+      "id": 5034,
+      "name": "CancelPrepayTimeout",
+      "description": "Таймаут при возврате депозита"
+    },
+    {
+      "id": 1113,
+      "name": "TimeoutCloseCheck",
+      "description": "Истек таймер закрытия чека (чек без открытия двери, таймер ожидания повторного открытия двери)"
+    },
+    {
+      "id": 3031,
+      "name": "CancelDolg",
+      "description": "Нажата кнопка Отмена на экране Оплата долга"
+    },
+    {
+      "id": 90,
+      "name": "CoffeState",
+      "description": "Состояние кофемашины"
+    },
+    {
+      "id": 97,
+      "name": "VideoState",
+      "description": "Состояние видео модуля"
+    },
+    {
+      "id": 98,
+      "name": "ScannerState",
+      "description": "Состояние сканера"
+    },
+    {
+      "id": 600,
+      "name": "StartSystem",
+      "description": "Запуск режима обслуживания"
+    },
+    {
+      "id": 601,
+      "name": "InitSystem",
+      "description": "Перевести киоск в режим обслуживания"
+    },
+    {
+      "id": 605,
+      "name": "FinishSystem",
+      "description": "Окончание режима обслуживания"
+    },
+    {
+      "id": 606,
+      "name": "StopSystem",
+      "description": "Вывести киоск из режима обслуживания"
+    },
+    {
+      "id": 200,
+      "name": "RemoveBlock",
+      "description": "Вывести киоск из ошибки"
+    },
+    {
+      "id": 380,
+      "name": "ResetRaspberry",
+      "description": "Сброс Bluepad"
+    },
+    {
+      "id": 170,
+      "name": "GetAction",
+      "description": "Получить акции"
+    },
+    {
+      "id": 171,
+      "name": "GetPersonalAction",
+      "description": "Получить персональные акции"
+    },
+    {
+      "id": 172,
+      "name": "PersonalActionList",
+      "description": "Список персональных акций"
+    },
+    {
+      "id": 175,
+      "name": "SetRate",
+      "description": "Оценка покупки"
+    },
+    {
+      "id": 111,
+      "name": "GetKioskState",
+      "description": "Получить состояние киоска"
+    },
+    {
+      "id": 9111,
+      "name": "CheckState",
+      "description": "Проверить состояние киоска"
+    },
+    {
+      "id": 1011,
+      "name": "RegisterComplete",
+      "description": "регистрация киоска выполнена"
+    },
+    {
+      "id": 10003,
+      "name": "StartVideoOpenCheck",
+      "description": "Запуск видео (чек открыт)"
+    },
+    {
+      "id": 10006,
+      "name": "StopVideoOpenCheck",
+      "description": "Стоп видео (чек закрыт)"
+    },
+    {
+      "id": 10013,
+      "name": "StartVideoOpenDoor",
+      "description": "Запуск видео (дверь открыта)"
+    },
+    {
+      "id": 10016,
+      "name": "StopVideoOpenDoor",
+      "description": "Стоп видео (дверь закрыта)"
+    },
+    {
+      "id": 10023,
+      "name": "StartVideoOpenDocument",
+      "description": "Запуск видео (сессия мерчанта)"
+    },
+    {
+      "id": 10026,
+      "name": "StopVideoCloseDocument",
+      "description": "Стоп видео (сессия мерчанта)"
+    },
+    {
+      "id": 10113,
+      "name": "SetOpenDoorEvent",
+      "description": "Получен идентификатор открытия двери"
+    },
+    {
+      "id": 10116,
+      "name": "SetCloseDoorEvent",
+      "description": "Получен идентификатор закрытия двери"
+    },
+    {
+      "id": 1000,
+      "name": "Update",
+      "description": "Команда на обновление киоска из ЛК"
+    },
+    {
+      "id": 1001,
+      "name": "Reboot",
+      "description": "команда на перезапуск киоска из ЛК"
+    },
+    {
+      "id": 1010,
+      "name": "Register",
+      "description": "регистрация киоска"
+    },
+    {
+      "id": 1011,
+      "name": "RegisterComplete",
+      "description": "регистрация завершена"
+    },
+    {
+      "id": 1002,
+      "name": "Unregister",
+      "description": "снятие регистрации киоска"
+    },
+    {
+      "id": 1003,
+      "name": "UnregisterComplete",
+      "description": "снятие регистрации завершено"
+    },
+    {
+      "id": 901,
+      "name": "TradeError",
+      "description": "Учет не отвечает"
+    },
+    {
+      "id": 906,
+      "name": "BankError",
+      "description": "Банковский модуль не отвечает"
+    },
+    {
+      "id": 908,
+      "name": "DeviceError",
+      "description": "Аппаратный модуль не отвечает"
+    },
+    {
+      "id": 1903,
+      "name": "CoffeeError",
+      "description": "Модуль кофемашины не отвечает"
+    },
+    {
+      "id": 1901,
+      "name": "BonusError",
+      "description": "Бонусный сервис не отвечает"
+    }
+  ],
+  "services": [
+    {
+      "id": 3,
+      "name": "UI",
+      "description": "Пользовательский интерфейс", 
+      "url": "ws://127.0.0.1:5000/test"
+    },
+    {
+      "id": 1,
+      "name": "TRADE",
+      "description": "Учет", 
+      "error_event": 901,
+      "url":"http://127.0.0.1:5555/api/trade"
+    },    
+    {
+      "id": 4,
+      "name": "CV",
+      "error_event": 904,
+      "description": "Модуль CV", 
+      "url":"http://127.0.0.1:5006/api/values/getdata"
+    },
+    {
+      "id": 12,
+      "name": "SCANNER",
+      "error_event": 904,
+      "description": "Сканер", 
+      "url":"http://127.0.0.1:5006/api/values/getdata"
+    },
+    {
+      "id": 6,
+      "name": "BANK",
+      "error_event": 906,
+      "description": "Банковский модуль", 
+      "url":"http://127.0.0.1:5566/api/terminal/command"
+    },
+    {
+      "id": 9,
+      "name": "VIDEO",
+      "error_event": 909,
+      "description": "Видео модуль", 
+      "url":"http://127.0.0.1:5110/api/values/getdata"
+    },
+    {
+      "id": 8,
+      "name": "DEVICE",
+      "error_event": 908,
+      "description": "Аппаратный модуль", 
+      "url":"http://127.0.0.1:5005/api/arduino/command"
+    },
+    {
+      "id": 11,
+      "name": "ERROR",
+      "error_event": 1911,
+      "description": "Сервис анализа ошибок", 
+      "url":"http://127.0.0.1:5666/api/state/error"
+    },
+    {
+      "id": 20,
+      "name": "BONUS",
+      "error_event": 1901,
+      "description": "Бонусный сервис", 
+      "url":"http://127.0.0.1:5117/api/values/getdata"
+    },
+    {
+      "id": 111,
+      "name": "MONITOR",
+      "error_event": 1911,
+      "description": "Сервис мониторинга", 
+      "url":"http://127.0.0.1:5555/api/values/monitor"
+    }
+  ],
+  "states": [
+    {
+      "id": -1,
+      "name": "Other",
+      "description": "Все остальные состояния не указанные в списке события, когда тербуется какое-то действие. Иначе событие игнорируется"
+    },
+    {
+      "id": 0,
+      "name": "Idle",
+      "description": "Изначальное состояние в котором находиться киоск при простое"
+    },
+    {
+      "id": 1,
+      "name": "CheckCard",
+      "description": "Проверка карты"
+    },
+    {
+      "id": 2,
+      "name": "CheckCode",
+      "description": "Проверка приложения"
+    },
+    {
+      "id": 3,
+      "name": "OpenCheck",
+      "description": "открыть чек"
+    },
+    {
+      "id": 4,
+      "name": "SaleCheck",
+      "description": "чек без открытия двери"
+    },
+    {
+      "id": 5,
+      "name": "OpenDoor",
+      "description": "открыта дверь"
+    },
+    {
+      "id": 6,
+      "name": "Prepay",
+      "description": "второе поднесение карты"
+    },
+    {
+      "id": 7,
+      "name": "StopSession",
+      "description": "остановка сессии продажи"
+    },
+    {
+      "id": 8,
+      "name": "CloseCheck",
+      "description": "закрыть чек"
+    },
+    {
+      "id": 9,
+      "name": "CloseDoor",
+      "description": "дверь закрыта"
+    },
+    {
+      "id": 10,
+      "name": "EmptyCheck",
+      "description": "отмена депозита пустой чек"
+    },
+    {
+      "id": 11,
+      "name": "PayCheck",
+      "description": "оплата"
+    },
+    {
+      "id": 12,
+      "name": "BonusCheck",
+      "description": "бонусный чек (скидка/бонусы)"
+    },
+    {
+      "id": 15,
+      "name": "DolgToken",
+      "description": "Получение долга по токену"
+    },
+    {
+      "id": 25,
+      "name": "PayDolg",
+      "description": "оплата долга"
+    },
+    {
+      "id": 32,
+      "name": "OpenLock",
+      "description": "открыть замок в режиме мерчанта"
+    },
+    {
+      "id": 37,
+      "name": "Technic",
+      "description": "сессия техника"
+    },
+    {
+      "id": 38,
+      "name": "Merchant",
+      "description": "сессия мерчанта"
+    },
+    {
+      "id": 36,
+      "name": "ResetDocument",
+      "description": "переключение документа"
+    },
+    {
+      "id": 35,
+      "name": "UpdateDocument",
+      "description": "изменение документа"
+    },
+    {
+      "id": 39,
+      "name": "MerchentCloseDoor",
+      "description": "закрытие двери в режиме мерчанта"
+    },
+    {
+      "id": 50,
+      "name": "Inventarization",
+      "description": "инвентаризация"
+    },    
+    {
+      "id": 90,
+      "name": "CheckState",
+      "description": "проверка состояния модулей"
+    },
+    {
+      "id": 98,
+      "name": "System",
+      "description": "режим обслуживания"
+    },    
+    {
+      "id": 99,
+      "name": "Block",
+      "description": "блокировка"
+    }
+  ],
+  "timers": [
+    {
+      "id": 1,
+      "timeout": 65,
+      "name": "OpenDoorTimer",
+      "expire_event": 11,
+      "description": "Ожидание открытия двери"
+    },
+    {
+      "id": 2,
+      "timeout": 65,
+      "name": "PayDolgTimer",
+      "expire_event": 3031,
+      "description": "Ожидание реакции пользователя Экран долг"
+    },
+    {
+      "id": 3,
+      "timeout": 65,
+      "name": "PrepayTimer",
+      "expire_event": 5031,
+      "description": "Ожидание второго поднесения карты"
+    },
+    {
+      "id": 4,
+      "timeout": 35,
+      "name": "SaleTimer",
+      "expire_event": 1113,
+      "description": "Таймер действия пользователя при покупке без открытия двери"
+    },
+    {
+      "id": 5,
+      "timeout": 32,
+      "name": "ReopenDoor",
+      "expire_event": 1113,
+      "description": "Ожидание повторного открытия двери"
+    },
+    {
+      "id": 6,
+      "timeout": 130,
+      "name": "EnterPhone",
+      "expire_event": 88,
+      "description": "Ожидание ввода номера телефона"
+    },
+    {
+      "id": 7,
+      "timeout": 15,
+      "name": "WaitCloseLock",
+      "expire_event": 1112,
+      "description": "Ожидание закрытия замков"
+    },
+    {
+      "id": 8,
+      "timeout": 130,
+      "name": "WaitBonus",
+      "expire_event": 69,
+      "description": "Ожидание ввода бонусов у списанию"
+    },
+    {
+      "id": 9,
+      "timeout": 65,
+      "name": "WaitToken",
+      "expire_event": 2021,
+      "description": "Ожидание получения долга по токену"
+    },
+    {
+      "id": 10,
+      "timeout": 130,
+      "name": "WaitCancelBonus",
+      "expire_event": 74,
+      "description": "Ожидание реакции пользователя Экран отказа от списания бонусов"
+    },
+    {
+      "id": 11,
+      "timeout": 5,
+      "name": "WaitMerchantCloseDoor",
+      "expire_event": 66,
+      "description": "Задержка закрытия двери в режиме мерчанта (дребезг контакта)"
+    },
+    {
+      "id": 12,
+      "timeout": 65,
+      "name": "WaitMerchantCloseDoor",
+      "expire_event": 308,
+      "description": "Ожидание закрытия сессии мерчанта"
+    },
+    {
+      "id": 1000,
+      "timeout": 60,
+      "name": "WaitUpdate",
+      "expire_event": 1000,
+      "description": "Ожидание запуска обновления по команде из ЛК"
+    },
+    {
+      "id": 1001,
+      "timeout": 60,
+      "name": "WaitReboot",
+      "expire_event": 1001,
+      "description": "Ожидание перезапуска по команде из ЛК"
+    }
+  ],
+  "data_stores": [
+    {
+      "id": 1,
+      "name": "Client",
+      "description": "Данные клиента"
+    },
+    {
+      "id": 2,
+      "name": "Check",
+      "description": "Данные чека"
+    },
+    {
+      "id": 3,
+      "name": "Prepay",
+      "description": "Данные для списания депозита"
+    },
+    {
+      "id": 4,
+      "name": "StateData",
+      "description": "Данные для UI"
+    }
+  ],
+  "pay_modes": [
+    {
+      "id": 1,
+      "name": "BankCard",
+      "description": "Чек открыт банковской картой"
+    },
+    {
+      "id": 2,
+      "name": "Phone",
+      "description": "Чек открыт приложением на телефоне"
+    }
+  ],
+  "scenario": [
+    {
+      "event": 1,
+      "actions": [
+        {
+          "state": 0,
+	  "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_data_store": 1,
+          "set_pay_mode": 1,
+          "set_state": 1
+        },   
+        {
+          "state": 15,
+	  "commands": [
+            {
+              "service": 6
+            },
+            {
+              "service": 1,
+              "event": 2,
+              "data_store": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 6
+        },     
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            }       
+          ] 
+        }       
+      ]    
+    },
+    {
+      "event": 301,
+      "actions": [
+        {
+          "state": 0,
+	  "commands": [
+	    {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_data_store": 1,
+          "set_pay_mode": 2,
+          "set_state": 2
+        },   
+        {
+          "state": 99,
+          "commands": [
+	    {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        }            
+      ]    
+    },
+    {
+      "event": 333,
+      "actions": [
+        {
+          "state": 2,
+	  "commands": [
+	    {
+              "service": 9,
+              "event": 10023
+            },
+            {
+              "service": 3
+            },
+            {
+              "service": 12
+            },
+            {
+              "service": 8,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 32
+        },   
+        {
+          "state": 32,
+          "commands": [
+            {
+              "service": 3
+            },
+	    {
+              "service": 1
+            }
+          ],
+          "set_state": 38,
+          "start_timer": 1
+        }            
+      ]    
+    },
+    {
+      "event": 335,
+      "actions": [
+        {
+          "state": 2,
+	  "commands": [
+	    {
+              "service": 9,
+              "event": 10023
+            },
+            {
+              "service": 3
+            },
+            {
+              "service": 12
+            },
+            {
+              "service": 8,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 32
+        },   
+        {
+          "state": 32,
+          "commands": [
+            {
+              "service": 3
+            },
+	    {
+              "service": 1
+            }
+          ],
+          "set_state": 37,
+          "start_timer": 1
+        }            
+      ]    
+    },
+    {
+      "event": 334,
+      "actions": [
+        {
+          "state": 2,
+	  "commands": [
+            {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        }           
+      ]    
+    },
+    {
+      "event": 320,
+      "actions": [
+        {
+          "state": 38,
+	  "commands": [
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 36
+        },
+        {
+          "state": 36,
+	  "commands": [
+            {
+              "service": 3
+            }
+          ],
+          "set_state": 38
+        }                      
+      ]    
+    },
+    {
+      "event": 311,
+      "actions": [
+        {
+          "state": 38,
+	  "commands": [
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 35 
+        },
+        {
+          "state": 35,
+	  "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 9,
+              "event": 130
+            }
+          ],
+          "set_state": 38 
+        }                                     
+      ]    
+    },
+    {
+      "event": 312,
+      "actions": [
+        {
+          "state": 35,
+	  "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 9,
+              "event": 130
+            }
+          ],
+          "set_state": 38 
+        }                                     
+      ]    
+    },
+    {
+      "event": 308,
+      "actions": [
+        {
+          "state": 39,
+	  "commands": [
+            {
+              "service": 1
+            },
+            {
+              "service": 12,
+              "event": 336
+            },
+            {
+              "service": 9,
+              "event": 10023
+            }
+          ],
+          "set_state": 0 
+        }                                     
+      ]    
+    },
+    {
+      "event": 351,
+      "actions": [
+        {
+          "state": 0,
+	  "commands": [
+	    {
+              "service": 9,
+              "event": 301
+            },
+            {
+              "service": 1,
+              "event": 301,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_data_store": 1,
+          "set_pay_mode": 2,
+          "set_state": 2
+        },   
+        {
+          "state": 99,
+          "commands": [
+	    {
+              "service": 1,
+              "event": 301,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        }            
+      ]    
+    },
+    {
+      "event": 332,
+      "actions": [
+        {
+          "state": 2,
+          "commands": [
+            {
+              "service": 1,
+              "event": 2,
+              "data_store": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }          
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 3038,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 6
+            }          
+          ],
+          "start_timer": 9,
+          "set_state": 15
+        } 
+      ]
+    },
+    {
+      "event": 3040,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 111,
+              "event": 10
+            },
+            {
+              "service": 6,
+              "pay_mode": 1,
+              "event": 99
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 2021,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 111,
+              "event": 10
+            },
+            {
+              "service": 6,
+              "pay_mode": 1,
+              "event": 99
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 2020,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 6,
+              "event": 3033
+            },
+	    {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 9
+        } 
+      ]
+    },
+    {
+      "event": 2030,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "start_timer": 2
+        } 
+      ]
+    },
+    {
+      "event": 2040,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "start_timer": 2
+        } 
+      ]
+    },
+    {
+      "event": 3030,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 1,
+              "event": 51,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 2
+        } 
+      ]
+    },
+    {
+      "event": 3031,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 6,
+              "pay_mode": 1,
+              "event": 99
+            },
+            {
+              "service": 3,
+              "event": 0
+            }            
+          ],
+          "stop_timer": 2,
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 3032,
+      "actions": [
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 6,
+              "event": 202,
+              "wait_result": true,
+              "wait_timeout": 60
+            }          
+          ],
+          "stop_timer": 2,
+          "set_state": 25
+        }  
+      ]
+    },
+    {
+      "event": 20,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+            {
+              "service": 6,
+              "wait_result": true,
+              "wait_timeout": 60
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 10,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 6,
+              "event": 3033
+            },
+	    {
+              "service": 3
+            }
+          ],
+          "start_timer": 2
+        },
+        {
+          "state": 2,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        }  
+      ]
+    },
+    {
+      "event": 202,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 6,
+              "wait_result": true,
+              "wait_timeout": 60
+            }
+          ],
+          "stop_timer": 2,
+          "set_state": 25
+        },
+        {
+          "state": 25,
+          "commands": [
+	    {
+              "service": 1
+            },
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        }    
+      ]
+    },
+    {
+      "event": 205,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 1
+            },
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        }  
+      ]
+    },
+    {
+      "event": 40,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 6,
+              "event": 3033
+            },
+	    {
+              "service": 3,
+              "event": 10
+            }
+          ],
+          "start_timer": 2
+        },
+        {
+          "state": 2,
+          "commands": [
+	    {
+              "service": 3,
+              "event": 10
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 30,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 6,
+              "event": 3033
+            },
+	    {
+              "service": 3
+            }
+          ],
+          "start_timer": 2
+        }
+      ]
+    },
+    {
+      "event": 50,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+            {
+              "service": 6,
+              "event": 50,
+              "wait_result": true,
+              "wait_timeout": 60
+            }
+          ],
+          "set_state": 6
+        },
+        {
+          "state": 15,
+          "commands": [
+            {
+              "service": 9,
+              "event": 97,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 1
+        },
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 1,
+              "event": 2,
+              "data_store": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_data_store": 3
+        },  
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 3,
+              "data_store": 2
+            }
+          ],
+          "stop_timer": 3
+        }  
+      ]
+    },
+    {
+      "event": 32,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 1,
+              "event": 2,
+              "data_store": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 211,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 1,
+              "event": 2,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 221,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 6,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 222,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 6,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 231,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 6,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 239,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 6,
+          "commands": [
+	    {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 22,
+      "actions": [
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 20
+            },
+            {
+              "service": 1,
+              "event": 171
+            },
+            {
+              "service": 9,
+              "event": 10003
+            },
+            {
+              "service": 3,
+              "event": 50
+            },
+            {
+              "service": 1,
+              "event": 50,
+              "data_store": 3
+            }
+          ],
+          "start_timer": 3
+        },
+        {
+          "state": 2,
+          "commands": [
+            {
+              "service": 20
+            },
+            {
+              "service": 1,
+              "event": 171
+            },
+            {
+              "service": 9,
+              "event": 10003
+            },
+            {
+              "service": 9,
+              "event": 97,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 90,
+          "set_data_store": 2
+        }
+      ]
+    },
+    {
+      "event": 551,
+      "actions": [
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 9,
+              "event": 97,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 3,
+          "set_state": 90
+        } 
+      ]
+    },
+    {
+      "event": 23,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 12,
+              "event": 3303
+            },
+            {
+              "service": 1,
+              "event": 313
+            }
+          ],
+          "start_timer": 1,
+          "set_state": 3 
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 12,
+              "event": 3303
+            },
+            {
+              "service": 1,
+              "event": 313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 3,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 12,
+              "event": 3303
+            },
+            {
+              "service": 1,
+              "event": 313
+            },
+            {
+              "service": 111
+            },
+            {
+              "service": 1,
+              "data_store": 1,
+              "wait_result": true,
+              "wait_timeout": 10              
+            }
+          ],
+          "stop_timer": 1,
+          "set_state": 5
+        },
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 111
+            },
+            {
+              "service": 1,
+              "data_store": 1,
+              "wait_result": true,
+              "wait_timeout": 10              
+            }
+          ],
+          "stop_timer": 1,
+          "set_state": 5
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 1,
+              "event": 62         
+            },
+            {
+              "service": 111
+            },
+            {
+              "service": 3,
+              "event": 62         
+            }
+          ],
+          "stop_timer": 5,
+          "set_state": 5
+        },
+        {
+          "state": 37,
+          "commands": [
+            {
+              "service": 111
+            },
+            {
+              "service": 3        
+            },
+            {
+              "service": 1,
+              "event": 303         
+            }
+          ],
+          "stop_timer": 1
+        },
+        {
+          "state": 38,
+          "commands": [
+            {
+              "service": 111
+            },
+            {
+              "service": 3        
+            },
+            {
+              "service": 1,
+              "event": 303         
+            }
+          ],
+          "stop_timer": 1
+        },
+        {
+          "state": 39,
+          "set_state": 38,
+          "stop_timer": 11
+        }    
+      ]
+    },
+    {
+      "event": 3333,
+      "actions": [
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 3
+            }
+          ],
+          "stop_timer": 4
+        }  
+      ]
+    },
+    {
+      "event": 4004,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9,
+              "event": 4
+            },
+            {
+              "service": 1,
+              "event": 4,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 4
+        }, 
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9,
+              "event": 4
+            },
+            {
+              "service": 1,
+              "event": 4,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9,
+              "event": 4
+            },
+            {
+              "service": 1,
+              "event": 4,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 5
+        }  
+      ]
+    },
+    {
+      "event": 4,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 5
+        }  
+      ]
+    },
+    {
+      "event": 4404,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9,
+              "event": 4
+            },
+            {
+              "service": 1,
+              "event": 4,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9,
+              "event": 4
+            },
+            {
+              "service": 1,
+              "event": 4,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9,
+              "event": 4
+            },
+            {
+              "service": 1,
+              "event": 4,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 5
+        }  
+      ]
+    },
+    {
+      "event": 4444,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ],
+          "set_state": 4,
+          "stop_timer": 1,
+          "start_timer": 4
+        },
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ]
+        }  
+      ]
+    },
+    {
+      "event": 4440,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 3
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }  
+      ]
+    },
+    {
+      "event": 5,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 5
+        }  
+      ]
+    },
+    {
+      "event": 4405,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9,
+              "event": 5
+            },
+            {
+              "service": 1,
+              "event": 5,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9,
+              "event": 5
+            },
+            {
+              "service": 1,
+              "event": 5,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9,
+              "event": 5
+            },
+            {
+              "service": 1,
+              "event": 5,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 5
+        }  
+      ]
+    },
+    {
+      "event": 4445,
+      "actions": [
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ],
+          "start_timer": 4
+        },
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ]
+        },
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 9,
+              "event": 130
+            },
+            {
+              "service": 20
+            },
+            {
+              "service": 3
+            }
+          ]
+        }  
+      ]
+    },
+    {
+      "event": 66,
+      "actions": [
+        {
+          "state": 5,
+          "commands": [
+            {
+              "service": 111
+            },            
+            {
+              "service": 1,
+              "event": 61,
+              "wait_result": true,
+              "wait_timeout": 10 
+            }
+          ],
+          "start_timer": 5,
+          "set_state": 9
+        },
+        {
+          "state": 39,
+          "commands": [           
+            {
+              "service": 3,
+              "event": 6
+            },
+            {
+              "service": 111
+            },
+            {
+              "service": 8,
+              "event": 6
+            }
+          ],
+          "stop_timer": 11,
+          "start_timer": 12 
+        },
+        {
+          "state": 38,
+          "set_state": 39,
+          "start_timer": 11
+        }  
+      ]
+    },
+    {
+      "event": 61,
+      "actions": [
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 6,
+      "actions": [
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 3
+            },            
+            {
+              "service": 8
+            },
+            {
+              "service": 1,
+              "event": 88,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 5,
+          "set_state": 7
+        },
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 8
+            },
+            {
+              "service": 1,
+              "event": 88,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 4,
+          "set_state": 7
+        },
+        {
+          "state": 7,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 8
+            },
+            {
+              "service": 1,
+              "event": 88,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 4
+        } 
+      ]
+    },
+    {
+      "event": 88,
+      "actions": [
+        {
+          "state": 7,
+          "commands": [
+            {
+              "service": 3,
+              "event": 14
+            },
+            {
+              "service": 9,
+              "event": 10006
+            },
+            {
+              "service": 12,
+              "event": 6
+            },
+            {
+              "service": 1,
+              "event": 6,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 8,
+          "set_data_store": 2
+        }
+      ]
+    },
+    {
+      "event": 89,
+      "actions": [
+        {
+          "state": 7,
+          "commands": [
+            {
+              "service": 3
+            }            
+          ],
+          "start_timer": 6,
+          "set_data_store": 2
+        }
+      ]
+    },
+    {
+      "event": 7,
+      "actions": [
+        {
+          "state": 7,
+          "commands": [
+            {
+              "service": 1
+            },           
+            {
+              "service": 3,
+              "event": 14
+            },
+            {
+              "service": 9,
+              "event": 10006
+            },
+            {
+              "service": 12,
+              "event": 6
+            },
+            {
+              "service": 1,
+              "event": 6,
+              "data_store": 2,
+              "wait_result": true,
+              "wait_timeout": 10
+            }          
+          ],
+          "stop_timer": 6,
+          "set_state": 8
+        }
+      ]
+    },
+    {
+      "event": 9,
+      "actions": [
+        {
+          "state": 8,
+          "commands": [
+            {
+              "service": 3,
+              "event": 72
+            },
+	    {
+              "service": 6,
+              "event": 5032,
+              "pay_mode": 1,
+              "set_state": 10,
+              "wait_result": true,
+              "wait_timeout": 60
+            },
+            {
+              "service": 3,
+              "pay_mode": 2,
+              "set_state": 0
+            }            
+          ]
+        }
+      ]
+    },
+    {
+      "event": 5030,
+      "actions": [
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 1
+            },
+	    {
+              "service": 3
+            }           
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 5032,
+      "actions": [
+        {
+          "state": 10,
+          "commands": [
+            {
+              "service": 1
+            },
+	    {
+              "service": 3,
+              "event": 9
+            }           
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 1
+            },
+	    {
+              "service": 3
+            }           
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 227,
+      "actions": [
+        {
+          "state": 10,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 228,
+      "actions": [
+        {
+          "state": 11,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 234,
+      "actions": [
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 5034
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 10,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 11,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 235,
+      "actions": [
+        {
+          "state": 11,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 224,
+      "actions": [
+        {
+          "state": 25,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 223,
+      "actions": [
+        {
+          "state": 25,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 238,
+      "actions": [
+        {
+          "state": 25,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 995,
+      "actions": [
+        {
+          "state": 25,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 201,
+      "actions": [
+        {
+          "state": 10,
+          "commands": [
+            {
+              "service": 1
+            },  
+            {
+              "service": 3,
+              "event": 9
+            }          
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 11,
+          "commands": [
+            {
+              "service": 1
+            }, 
+            {
+              "service": 3,
+              "event": 16
+            }           
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 1
+            }, 
+            {
+              "service": 3,
+              "event": 16
+            }           
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 8,
+      "actions": [
+        {
+          "state": 8,
+          "commands": [
+            {
+              "service": 3,
+              "event": 72
+            },
+            {
+              "service": 6,
+              "pay_mode": 1,
+              "set_state": 11,
+              "wait_result": true,
+              "wait_timeout": 60
+            },
+            {
+              "service": 3,
+              "event": 16,
+              "pay_mode": 2,
+              "set_state": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 78,
+      "actions": [
+        {
+          "state": 8,
+          "commands": [
+            {
+              "service": 20,
+              "wait_result": true,
+              "wait_timeout": 60
+            }        
+          ],
+          "set_state": 12
+        }
+      ]
+    },
+    {
+      "event": 68,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            }        
+          ]
+        }
+      ]
+    },
+    {
+      "event": 69,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 20,
+              "wait_result": true,
+              "wait_timeout": 60
+            }        
+          ]
+        }
+      ]
+    },
+    {
+      "event": 70,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            } 
+          ]
+        }
+      ]
+    },
+    {
+      "event": 71,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }         
+          ]
+        }
+      ]
+    },
+    {
+      "event": 72,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 6,
+              "event": 8,
+              "pay_mode": 1,
+              "wait_result": true,
+              "wait_timeout": 60
+            },
+            {
+              "service": 3,
+              "pay_mode": 2,
+              "event": 16,
+              "set_state": 0
+            }        
+          ]
+        }
+      ]
+    },
+    {
+      "event": 75,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }        
+          ]
+        }
+      ]
+    },
+    {
+      "event": 81,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            }        
+          ],
+          "start_timer": 10
+        }
+      ]
+    },
+    {
+      "event": 74,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 20,
+              "wait_result": true,
+              "wait_timeout": 10
+            }        
+          ],
+          "stop_timer": 10
+        }
+      ]
+    },
+    {
+      "event": 76,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 1,
+              "wait_result": true,
+              "wait_timeout": 10
+            }        
+          ]
+        }
+      ]
+    },
+    {
+      "event": 79,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 1
+            },        
+            {
+              "service": 8,
+              "wait_result": true,
+              "wait_timeout": 10
+            }        
+          ]
+        }
+      ]
+    },
+    {
+      "event": 83,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            }        
+          ],
+          "set_state": 4,
+          "start_timer": 4
+        }
+      ]
+    },
+    {
+      "event": 80,
+      "actions": [
+        {
+          "state": 8,
+          "commands": [
+            {
+              "service": 3
+            }          
+          ],
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 552,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 3,
+              "event": 5031
+            },
+            {
+              "service": 6,
+              "event": 5031,
+              "wait_result": true,
+              "wait_timeout": 60
+            }          
+          ],
+          "stop_timer": 3
+        } 
+      ]
+    },
+    {
+      "event": 553,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 3,
+              "event": 5032
+            },
+            {
+              "service": 1,
+              "event": 5032
+            }          
+          ],
+          "stop_timer": 3,
+          "set_state": 0
+        } 
+      ]
+    },
+    {
+      "event": 554,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 1,
+              "event": 5031,
+              "wait_result": true,
+              "wait_timeout": 60
+            }          
+          ],
+          "stop_timer": 3
+        }  
+      ]
+    },
+    {
+      "event": 5031,
+      "actions": [
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 9,
+              "event": 10006
+            },
+            {
+              "service": 6,
+              "wait_result": true,
+              "wait_timeout": 60
+            }          
+          ],
+          "stop_timer": 3
+        }  
+      ]
+    },
+    {
+      "event": 28,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 29,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 48,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 49,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1
+            }          
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 130,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 131,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 11,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 8
+            }
+          ],
+          "stop_timer": 1,
+          "start_timer": 7
+        },
+        {
+          "state": 37,
+          "commands": [
+            {
+              "service": 8
+            }
+          ],
+          "stop_timer": 1,
+          "start_timer": 7
+        },
+        {
+          "state": 38,
+          "commands": [
+            {
+              "service": 8
+            }
+          ],
+          "stop_timer": 1,
+          "start_timer": 7
+        }
+      ]
+    },
+    {
+      "event": 1112,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 9,
+              "event": 10006
+            },
+            {
+              "service": 12,
+              "event": 6
+            },
+            {
+              "service": 1,
+              "event": 11,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 7,
+          "set_state": 8
+        },
+        {
+          "state": 37,
+          "commands": [
+            {
+              "service": 1,
+              "event": 308
+            },
+            {
+              "service": 9,
+              "event": 10026
+            },
+            {
+              "service": 12,
+              "event": 336
+            },
+            {
+              "service": 3,
+              "event": 308
+            }
+          ],
+          "stop_timer": 7,
+          "set_state": 0
+        },
+        {
+          "state": 38,
+          "commands": [
+            {
+              "service": 1,
+              "event": 308
+            },
+            {
+              "service": 9,
+              "event": 10026
+            },
+            {
+              "service": 12,
+              "event": 336
+            },
+            {
+              "service": 3,
+              "event": 308
+            }
+          ],
+          "stop_timer": 7,
+          "set_state": 0
+        }
+      ]
+    },
+    {
+      "event": 1113,
+      "actions": [
+        {
+          "state": 9,
+          "commands": [
+            {
+              "service": 3,
+              "event": 6
+            },            
+            {
+              "service": 8,
+              "event": 6
+            },
+            {
+              "service": 1,
+              "event": 88,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "set_state": 7
+        },
+        {
+          "state": 4,
+          "commands": [
+            {
+              "service": 3,
+              "event": 6
+            },            
+            {
+              "service": 8,
+              "event": 6
+            },
+            {
+              "service": 1,
+              "event": 88,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ],
+          "stop_timer": 4,
+          "set_state": 7
+        }  
+      ]
+    },
+    {
+      "event": 985,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 1
+            },
+            {
+              "service": 9,
+              "event": 97,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 1903,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+            {
+              "service": 1,
+              "event": 985
+            }
+          ]
+        },
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 1,
+              "event": 985
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 97,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 12,
+              "event": 98,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 909,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            },
+            {
+              "service": 3,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        } 
+      ]
+    },
+    {
+      "event": 98,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 8,
+              "event": 22,
+              "wait_result": true,
+              "wait_timeout": 10
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 904,
+      "actions": [
+        {
+          "state": 90,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            },
+            {
+              "service": 3,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        } 
+      ]
+    },
+    {
+      "event": 906,
+      "actions": [
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 6,
+              "event": 99
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 25,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 10,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 11,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        },
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 1,
+              "event": 203
+            }            
+          ],
+          "set_state": 0
+        }  
+      ]
+    },
+    {
+      "event": 908,
+      "actions": [
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 3,
+              "event": 99
+            },
+            {
+              "service": 6,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        }
+      ]
+    },
+    {
+      "event": 1901,
+      "actions": [
+        {
+          "state": 12,
+          "commands": [
+            {
+              "service": 3,
+              "event": 71
+            },
+            {
+              "service": 1,
+              "event": 71,
+              "wait_result": true,
+              "wait_timeout": 10
+            }         
+          ]
+        }
+      ]
+    },
+    {
+      "event": 901,
+      "actions": [
+        {
+          "state": 1,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            },
+            {
+              "service": 3,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        },
+        {
+          "state": 2,
+          "commands": [
+            {
+              "service": 3,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        },        
+        {
+          "state": 3,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            },
+            {
+              "service": 3,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        }, 
+        {
+          "state": 6,
+          "commands": [
+            {
+              "service": 6,
+              "event": 99
+            },
+            {
+              "service": 3,
+              "event": 99
+            }
+          ],
+          "set_state": 99
+        } 
+      ]
+    },
+    {
+      "event": 10003,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 10006,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 170,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 380,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 111,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3,
+              "data_store": 4
+            }
+          ]
+        }
+      ]
+    },    
+    {
+      "event": 1011,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },  
+    {
+      "event": 172,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },  
+    {
+      "event": 175,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service":20
+            }
+          ]
+        }
+      ]
+    }, 
+    {
+      "event": 200,
+      "actions": [
+        {
+          "state": 0,
+          "set_data_store": 4
+        },
+        {
+          "state": 99,
+          "commands": [
+            {
+              "service": 3
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state":-1
+        }
+      ]
+    },
+    {
+      "event": 600,
+      "actions": [
+        {
+          "state": 0,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 7,
+              "event": 601
+            }
+          ],
+          "set_state": 98
+        },
+        {
+          "state": 98,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        },
+        {
+          "state": 99,
+          "commands": [
+            {
+              "service": 3
+            },
+            {
+              "service": 7,
+              "event": 601
+            }
+          ],
+          "set_state": 98
+        }
+      ]
+    },
+    {
+      "event": 605,
+      "actions": [
+        {
+          "state": 0,
+          "set_data_store": 4
+        },
+        {
+          "state": 98,
+          "commands": [
+            {
+              "service": 3,
+              "event": 606
+            }
+          ],
+          "set_state": 0
+        },
+        {
+          "state":-1
+        }
+      ]
+    },
+    {
+      "event": 10113,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 9,
+              "event": 10013
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 10116,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 9,
+              "event": 10016
+            }
+          ]
+        } 
+      ]
+    },
+    {
+      "event": 10013,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 10016,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 251,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 252,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 253,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 921,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 9,
+              "event": 131
+            },
+            {
+              "service":222
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 1000,
+      "actions": [
+        {
+          "state": 0,
+          "commands": [
+            {
+              "service": 3,
+              "event": 600
+            },
+            {
+              "service": 7
+            }
+          ],
+          "set_state": 98,
+          "stop_timer": 1000
+        },
+        {
+          "state": -1,
+          "start_timer": 1000
+        }
+      ]
+    },
+    {
+      "event": 1001,
+      "actions": [
+        {
+          "state": 0,
+          "commands": [
+            {
+              "service": 3,
+              "event": 600
+            },
+            {
+              "service": 7
+            }
+          ],
+          "set_state": 98,
+          "stop_timer": 1001
+        },
+        {
+          "state": -1,
+          "start_timer": 1001
+        }
+      ]
+    },
+    {
+      "event": 1010,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 1011,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 1002,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 1003,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "event": 900,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 111,
+              "data_store": 2
+            }
+          ],
+          "set_data_store": 5
+        }
+      ]
+    },
+    {
+      "event": 9900,
+      "actions": [
+        {
+          "state": -1,
+          "commands": [
+            {
+              "service": 11,
+              "event": 900,
+              "data_store": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

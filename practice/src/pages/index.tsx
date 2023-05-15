@@ -1,8 +1,11 @@
 import React, { useEffect } from "react";
 import PanelSection from "../../components/MainPage/PanelSection";
-import GraphSection from "../../components/MainPage/GraphSection";
+//import Diagram from "../../components/MainPage/Diagram";
+import GraphSection from "../../components/MainPage/GraphSection"
 import FooterSection from "../../components/MainPage/FooterSection";
 import dynamic from 'next/dynamic';
+import App from "@/components/MainPage/GraphSection";
+
 
 
 export default function Home() {
@@ -15,7 +18,7 @@ export default function Home() {
   return (
       <>
         <PanelSection></PanelSection>
-        <GraphSection></GraphSection>
+        <App></App>
         <FooterSection></FooterSection>
       </>
   );
