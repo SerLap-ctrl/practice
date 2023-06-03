@@ -1,0 +1,8 @@
+.modelInfoTimers {
+    background-color: rgba(255, 255, 255, 0);
+}
+.modelInfoTimer {
+    margin-top: 2px;
+    border: solid 1px black;
+    background-color: #7FB5B5F2;
+}
