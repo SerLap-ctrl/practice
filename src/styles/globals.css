@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.diagram {
+    position: absolute;
+    width: 75%;
+    height: 70%;
+    border: solid 1px black;
+    margin-top: 2px;
+    left: 2px;
+    background-color: white;
+}
+
+.divComponent{
+    position: fixed;
+    right: 2px;
+    margin-top: 2px;
+    z-index: 20;
+    width: 24.5%;
+}
+.btn {
+    position: absolute;
+    display: flex;
+    max-width: 75%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    top: 73%;
+    cursor: pointer;
+    left: 2px;
+    border: solid 1px #212121;
+}
+.colorBtn{
+    background-color: aquamarine;
+    margin: 3px;
+    padding: 1px;
+}
+.name {
+    position: absolute;
+    top: 70%;
+    width: 70%;
+    left: 2px;
+    display: flex;
+    justify-content: center;
+}
