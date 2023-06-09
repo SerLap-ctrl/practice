@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Block} from '@/components/graphSection/model/Block'
+import {Block} from '../Block'
 import {Scenario} from "@/src/types/JsonScenario";
 import styles from './InfoTimers.module.css'
 import {JSONScenario} from "@/src/types/JsonScenario";

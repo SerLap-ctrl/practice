@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {Block} from '@/components/graphSection/model/Block'
+import {Block} from '../Block'
 import {Scenario} from "@/src/types/JsonScenario";
 import styles from './InfoEventTransitionAndSetters.module.css';
-import {JSONScenario} from "@/src/types/JsonScenario";
+import {JSONScenario} from "@/src/types/JsonScenario"
 
 
 interface MyProps {
@@ -16,7 +16,8 @@ interface MyProps {
 export function InfoEventTransitionAndSetters(props: React.PropsWithChildren<MyProps>) {
   let infoEvent = props.infoEvent;
   let transitionArray = infoEvent?.actions?.find((elem) =>
-    elem.state == props.currentState)?.commands?.filter((elem) => elem.hasOwnProperty("set_state"))
+    elem.state == props.currentState)?.commands?.filter((elem) => elem.hasOwnProperty("set_state")
+      && elem.set_state != undefined)
   let transition: number | undefined;
   if (transitionArray?.length == 0 || !transitionArray) {
     transition = infoEvent?.actions?.find((elem) => elem.state == props.currentState)?.set_state

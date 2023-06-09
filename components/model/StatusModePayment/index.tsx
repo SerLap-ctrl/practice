@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Block} from '@/components/graphSection/model/Block'
+import {Block} from '../Block'
 import styles from './StatusMode.module.css'
 
 interface MyProps {

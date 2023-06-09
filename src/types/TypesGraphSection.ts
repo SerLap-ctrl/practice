@@ -22,8 +22,6 @@ export interface NodeTypeWithPosColorStroke {
     stroke: string,
 }
 
-export type Node = NodeType | NodeTypeWithPosColorStroke | NodeTypeWithRang
-
 export interface DataNodeType{
     key: number,
     text: string | undefined,
@@ -136,4 +134,9 @@ export type Command = {
 const v1 = {
     service: 2,
 
+}
+
+export type Link = {
+    from: number,
+    to: number
 }

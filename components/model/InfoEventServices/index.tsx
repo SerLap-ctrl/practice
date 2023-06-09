@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Block} from '@/components/graphSection/model/Block'
+import {Block} from '../Block'
 import {Scenario} from "@/src/types/JsonScenario";
 import styles from './InfoEventsServices.module.css'
 import {JSONScenario} from "@/src/types/JsonScenario"
@@ -24,9 +24,9 @@ export function InfoEventsServices(props: React.PropsWithChildren<MyProps>) {
         <div className={styles.modelInfoEventService} key={index} style={{
           color: "darkred"
         }}>Отправить событие №{elem?.event ?
-          elem?.event : infoEvent.event} -
+          elem.event : infoEvent?.event} -
           «{props.json?.events.find((el) =>
-            el.id == (elem?.event ? elem.event : infoEvent.event))?.description}»
+            el.id == (elem?.event ? elem.event : infoEvent?.event))?.description}»
           сервису №{elem.service}
           <li style={{color: "black"}} hidden={!elem?.wait_result}>Ожидать результат выполнения
             сервиса: {elem?.wait_result ? "Да" : "Нет"}</li>

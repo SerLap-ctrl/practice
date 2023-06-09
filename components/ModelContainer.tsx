@@ -1,13 +1,12 @@
 import * as React from 'react';
-import {StatusMode} from "@/components/graphSection/model/StatusMode";
-import {SelectionInspector} from "@/components/graphSection/model/SelectionInspector";
+import {StatusMode} from "./model/StatusModePayment";
+import {SelectionInspector} from "./model/SelectionInspectorInfoNode";
 import {go} from "gojs/projects/maximalSource/maximal-index";
-import {InfoEventsServices} from "@/components/graphSection/model/InfoEventServices";
-import {InfoEventTransitionAndSetters} from '@/components/graphSection/model/InfoEventTransitionAndSetters'
-import {InfoTimers} from '@/components/graphSection/index'
+import {InfoEventsServices} from "./model/InfoEventServices";
+import {InfoEventTransitionAndSetters} from './model/InfoEventTransitionAndSetters';
+import {InfoTimers} from '@/components/index';
 import {Scenario} from "@/src/types/JsonScenario";
-import {JSONScenario} from "@/src/types/JsonScenario"
-
+import {JSONScenario} from "@/src/types/JsonScenario";
 
 
 interface Props {
@@ -33,9 +32,11 @@ export default function ModelContainer({
       <StatusMode mode={mode}/>
       <SelectionInspector selectedData={selectData}/>
       <InfoEventsServices infoEvent={divInfoEvent}
-             currentState={currentState}
-             json={json}/>
-      <InfoTimers infoEvent={divInfoEvent} json={json} currentState={currentState}/>
+                          currentState={currentState}
+                          json={json}/>
+      <InfoTimers infoEvent={divInfoEvent}
+                  json={json}
+                  currentState={currentState}/>
       <InfoEventTransitionAndSetters infoEvent={divInfoEvent}
                                           json={json}
                                           currentState={currentState}

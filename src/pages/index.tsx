@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import PanelSection from "../../components/PanelSection";
 import FooterSection from "../../components/FooterSection";
-import GraphSection from "@/components/graphSection/GraphSection";
+import GraphSection from "@/components/GraphSection";
+import {index} from '@/store'
+import {Provider} from "react-redux";
 
 export default function Home() {
   useEffect(
@@ -10,10 +12,10 @@ export default function Home() {
       }
   );
   return (
-      <>
+      <Provider store={index}>
         <PanelSection/>
         <GraphSection/>
         <FooterSection/>
-      </>
+      </Provider>
   );
 }

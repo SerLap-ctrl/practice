@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {InspectorRow} from './InspectorRow';
-import {Block} from '@/components/graphSection/model/Block'
+import {Block} from '../Block'
 import styles from './SelectionInspector.module.css'
 
 
@@ -20,14 +20,13 @@ export class SelectionInspector extends React.PureComponent<SelectionInspectorPr
           </table>
         </div>
       </Block>
-
     );
   }
 
   private renderObjectDetails() {
     const selObj = this.props.selectedData;
-    const dets = [];
-    const attributeInvisible = ["pos", "stroke", "color", "from", "to", "rang"]
+    const dataDisplay = [];
+    const attributeInvisible = ["pos", "stroke", "color", "rang"]
     for (const k in selObj) {
       const val = selObj[k];
       if (!attributeInvisible.some(v => k.includes(v))) {
@@ -36,14 +35,13 @@ export class SelectionInspector extends React.PureComponent<SelectionInspectorPr
           id={k}
           value={val}
         />;
-
         if (k === 'key') {
-          dets.unshift(row);
+          dataDisplay.unshift(row);
         } else {
-          dets.push(row);
+          dataDisplay.push(row);
         }
       }
     }
-    return dets;
+    return dataDisplay;
   }
 }
